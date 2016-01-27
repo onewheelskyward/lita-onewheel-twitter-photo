@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'rest-client'
 
 module Lita
   module Handlers
@@ -12,7 +13,10 @@ module Lita
         noko_doc.xpath('//meta').each do |meta|
           attrs = meta.attributes
           if attrs['property'].to_s == 'og:image'
-            response.reply attrs['content'].to_s.sub /:large/, ''
+            image = attrs['content'].to_s
+            if /media/.match image
+              response.reply image.sub /:large/, ''
+            end
           end
         end
       end
