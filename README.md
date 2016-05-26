@@ -13,3 +13,6 @@ Add lita-onewheel-twitter-photo to your Lita instance's Gemfile:
 gem 'lita-onewheel-twitter-photo'
 ```
 
+Make this work: 
+
+https://twitter.com/teteza_2gouki/status/669170476304863232
