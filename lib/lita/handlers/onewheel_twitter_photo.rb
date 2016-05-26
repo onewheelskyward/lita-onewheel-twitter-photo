@@ -15,7 +15,7 @@ module Lita
           if attrs['property'].to_s == 'og:image'
             image = attrs['content'].to_s
             if /media/.match image
-              Lita.logger.debug "Twitter image response: " + image.sub(/:large/, '')
+              Lita.logger.debug 'Twitter image response: ' + image.sub(/:large/, '')
               response.reply image.sub /:large/, ''
             end
           end
