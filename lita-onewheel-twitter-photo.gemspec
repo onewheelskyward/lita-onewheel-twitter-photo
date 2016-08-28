@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'lita-onewheel-twitter-photo'
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
   spec.description   = %q{Lita interface to post links to twitter photos.}
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'lita', '~> 4.7'
+  spec.add_runtime_dependency 'lita', '~> 4'
   spec.add_runtime_dependency 'rest-client', '~> 1.8'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6'
 
