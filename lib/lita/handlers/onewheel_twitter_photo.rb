@@ -27,6 +27,7 @@ module Lita
         doc = RestClient.get uri
         noko_doc = Nokogiri::HTML doc
         title = noko_doc.xpath('//title').text.to_s
+        Lita.logger.debug response.message.source.room
         Lita.logger.debug title
         response.reply title
       end
