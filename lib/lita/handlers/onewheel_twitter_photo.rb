@@ -4,7 +4,7 @@ require 'rest-client'
 module Lita
   module Handlers
     class OnewheelTwitterPhoto < Handler
-      route /(http.*twitter.com\/.*\/status\/\d+)/i, :get_twitter_photo
+      route /(http.*twitter.com\/.*\/status\/\d+)/i, :get_twitter_title
 
       def get_twitter_photo(response)
         uri = response.matches[0][0]
@@ -20,6 +20,15 @@ module Lita
             end
           end
         end
+      end
+
+      def get_twitter_title(response)
+        uri = response.matches[0][0]
+        doc = RestClient.get uri
+        noko_doc = Nokogiri::HTML doc
+        title = noko_doc.xpath('//title').text.to_s
+        Lita.logger.debug title
+        response.reply title
       end
 
       Lita.register_handler(self)
