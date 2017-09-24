@@ -13,7 +13,8 @@ describe Lita::Handlers::OnewheelTwitterPhoto, lita_handler: true do
   # end
   it 'gets text' do
     mock_fixture('sample')
-    send_message ('https://twitter.com/th3fallen/status/689501399084855297')
-    expect(replies.last).to eq('Gavin Joyce on Twitter: "It sounds crazy, but disabling npm\'s progress bar yields a 2x npm install speed improvement for me https://t.co/ChXxSepCBK"')
+    send_message('https://twitter.com/th3fallen/status/689501399084855297')
+    expect(replies[0]).to eq('Gavin Joyce on Twitter: "It sounds crazy, but disabling npm\'s progress bar yields a 2x npm install speed improvement for me https://t.co/ChXxSepCBK"')
+    expect(replies[1]).to eq('https://pbs.twimg.com/media/CZmsv0SWYAAaO1N.png')
   end
 end

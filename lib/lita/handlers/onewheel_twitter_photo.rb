@@ -32,6 +32,7 @@ module Lita
           title = noko_doc.xpath('//title').text.to_s
           Lita.logger.debug title
           response.reply title
+          get_twitter_photo(response)
         end
       end
 
