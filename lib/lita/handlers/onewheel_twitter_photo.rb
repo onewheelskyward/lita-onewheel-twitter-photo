@@ -27,6 +27,7 @@ module Lita
       def get_twitter_title(response)
         if response.message.source.room == config.room
           uri = response.matches[0][0]
+          uri.sub! /mobile\./, ''
           doc = RestClient.get uri
           noko_doc = Nokogiri::HTML doc
           title = noko_doc.xpath('//title').text.to_s
